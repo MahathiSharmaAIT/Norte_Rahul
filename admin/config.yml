@@ -1,0 +1,23 @@
+backend:
+  name: git-gateway
+  branch: main # Change to 'master' if your default branch is master
+
+collections:
+  - name: "jobs" # Used in routes, e.g., /admin/collections/jobs
+    label: "Job Postings" # Used in the UI
+    folder: "_jobs" # The path to the folder where job files are stored
+    create: true # Allow users to create new jobs
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template
+    fields: # The fields for each job posting
+      - {label: "Job Title", name: "title", widget: "string"}
+      - {label: "Location", name: "location", widget: "string", hint: "e.g., Remote (US), Toronto ON, Chicago IL"}
+      - {label: "Contract Type", name: "contract_type", widget: "select", options: ["W2", "C2C", "T4", "W2/C2C"]}
+      - {label: "Status", name: "status", widget: "select", options: ["Open", "Closed"], default: "Open"}
+      - {label: "Job Description", name: "description", widget: "text"}
+      - {label: "Required Skills", name: "required_skills", widget: "list"}
+      - {label: "Nice to Have Skills", name: "nice_to_have", widget: "list", required: false}
+      - {label: "Duration", name: "duration", widget: "string", hint: "e.g., 6+ months, 12 months"}
+      - {label: "Rate", name: "rate", widget: "string", hint: "e.g., Competitive, $65-85/hour"}
+      - {label: "Start Date", name: "start_date", widget: "string", hint: "e.g., Immediate, February 2026"}
+      - {label: "Posted Date", name: "posted_date", widget: "date", default: ""}
+      - {label: "Featured", name: "featured", widget: "boolean", default: false, required: false}
