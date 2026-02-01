@@ -5,7 +5,7 @@ backend:
 collections:
   - name: "jobs" # Used in routes, e.g., /admin/collections/jobs
     label: "Job Postings" # Used in the UI
-    folder: "_jobs" # The path to the folder where job files are stored
+    folder: "jobs" # The path to the folder where job files are stored
     create: true # Allow users to create new jobs
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template
     fields: # The fields for each job posting
