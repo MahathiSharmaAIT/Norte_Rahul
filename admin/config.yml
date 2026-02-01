@@ -3,8 +3,6 @@ backend:
   branch: main
 
 media_folder: "images"
-media_library:
-  name: local
 
 collections:
   - name: "jobs"
