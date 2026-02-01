@@ -1,14 +1,18 @@
 backend:
   name: git-gateway
-  branch: main # Change to 'master' if your default branch is master
+  branch: main
+
+media_folder: "images"
+media_library:
+  name: local
 
 collections:
-  - name: "jobs" # Used in routes, e.g., /admin/collections/jobs
-    label: "Job Postings" # Used in the UI
-    folder: "jobs" # The path to the folder where job files are stored
-    create: true # Allow users to create new jobs
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template
-    fields: # The fields for each job posting
+  - name: "jobs"
+    label: "Job Postings"
+    folder: "jobs"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
       - {label: "Job Title", name: "title", widget: "string"}
       - {label: "Location", name: "location", widget: "string", hint: "e.g., Remote (US), Toronto ON, Chicago IL"}
       - {label: "Contract Type", name: "contract_type", widget: "select", options: ["W2", "C2C", "T4", "W2/C2C"]}
