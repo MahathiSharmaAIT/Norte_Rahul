@@ -29,7 +29,7 @@ body {
 }
 
 h1, h2, h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 700;
 }
 
@@ -166,7 +166,7 @@ h1, h2, h3 {
     color: var(--primary-color);
     margin-bottom: 1.5rem;
     animation: fadeInUp 1s ease 0.2s both;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Inter', sans-serif;
 }
 
 .hero-description {
@@ -775,7 +775,7 @@ h1, h2, h3 {
     font-size: 3rem;
     font-weight: 700;
     color: var(--primary-color);
-    font-family: 'Playfair Display', serif;
+    font-family: 'Inter', sans-serif;
     margin-bottom: 1rem;
 }
 
@@ -903,6 +903,55 @@ h1, h2, h3 {
 .contract-card p {
     color: var(--text-gray);
     line-height: 1.8;
+}
+
+/* Vendors Page Specific */
+/* Partner Logos Carousel */
+.logo-carousel-section {
+    background: var(--dark-blue);
+    padding: 2.5rem 0;
+    overflow: hidden;
+    border-top: 1px solid rgba(212, 165, 116, 0.15);
+    border-bottom: 1px solid rgba(212, 165, 116, 0.15);
+}
+
+.logo-carousel-track {
+    display: flex;
+    align-items: center;
+    animation: scrollLogos 25s linear infinite;
+    width: max-content;
+}
+
+.carousel-logo {
+    flex-shrink: 0;
+    width: 180px;
+    height: 70px;
+    margin: 0 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.45;
+    transition: opacity 0.3s ease;
+    filter: brightness(0) invert(1);
+}
+
+.carousel-logo:hover {
+    opacity: 0.85;
+}
+
+.carousel-logo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+@keyframes scrollLogos {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.logo-carousel-section:hover .logo-carousel-track {
+    animation-play-state: paused;
 }
 
 /* Vendors Page Specific */
@@ -1052,7 +1101,7 @@ h1, h2, h3 {
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Inter', sans-serif;
 }
 
 .step-content h3 {
